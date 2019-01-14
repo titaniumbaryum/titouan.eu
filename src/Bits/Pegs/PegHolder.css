@@ -1,0 +1,91 @@
+.PegHolder{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.Peg{
+  box-sizing: border-box;
+  padding: 20px 10px;
+  position: relative;
+  cursor: pointer;
+}
+.PegHolder-1 .Peg{width:100%}
+.PegHolder-2 .Peg{width:50%}
+.PegHolder-3 .Peg{width:33.33%}
+.PegHolder-4 .Peg{width:25%}
+.PegHolder-5 .Peg{width:20%}
+.PegHolder-6 .Peg{width:16.66%}
+.Peg-Description{
+  text-align: center;
+}
+.Peg-Circle-Holder{
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+}
+.Peg-Circle{
+  width: 100%;
+  height: 100%;
+  border-radius: 500px;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+.Peg-Description{
+  font-weight: bolder;
+  margin-top: 10px;
+}
+.SubPeg{
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 500px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+.Peg-Circle svg,.SubPeg svg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.Peg-SubPegs{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(.5,.5) rotate(-15deg);
+  transition: transform .5s;
+}
+.Peg-SubPegs svg{
+  opacity: 0;
+  transition: opacity .5s;
+}
+.Peg:hover .Peg-SubPegs{
+  transform: none;
+}
+.Peg:hover .Peg-SubPegs svg{
+  opacity: 1;
+}
+.Peg-progress,.Peg-progress-center{
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.5,0.5);
+  transition: transform .5s;
+  background: rgba(255,255,255,.3);
+  border-radius: 500px;
+  box-sizing: border-box;
+}
+.Peg:hover .Peg-progress{
+  transform: translate(-50%,-50%);
+}

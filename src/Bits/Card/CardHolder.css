@@ -1,0 +1,61 @@
+.CardHolder,.Card,.Card-header,.Card-header-year,.Card-header-middle,.Card-header-title,.Card-header-progress,.Card-header-progress-bar,.Card-header-progress-text,.Card-header-logo,.Card-content{
+  position:relative;
+  box-sizing: border-box;
+}
+.CardHolder{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content:flex-start;
+}
+.Card{
+  box-shadow: 0 5px 10px -5px black;
+  flex-grow: 1;
+  margin: 10px;
+  width: 45%;
+  min-width: 300px;
+}
+.Card-header{
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+}
+.Card-header-year{
+  width: min-content;
+  height: min-content;
+  margin: 0 10px;
+  font-size: 24px;
+}
+.Card-header-middle{
+  flex-grow: 1;
+  height: min-content;
+  position: static;
+}
+.Card-header-title{
+
+}
+.Card-header-progress{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  display: flex;
+  align-items: center;
+}
+.Card-header-progress-bar{
+  height:2px;
+}
+.Card-header-progress-text{
+  padding: 0 5px;
+  font-size: 12px;
+}
+.Card-header-logo{
+  height: calc(100% - 10px);
+  margin: 5px;
+}
+.Card-content{
+  padding: 10px;
+}

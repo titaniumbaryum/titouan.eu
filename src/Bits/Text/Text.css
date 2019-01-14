@@ -1,0 +1,7 @@
+.Text a{
+  color: inherit;
+  text-decoration: underline;
+}
+.Text a:hover{
+  text-decoration: none;
+}

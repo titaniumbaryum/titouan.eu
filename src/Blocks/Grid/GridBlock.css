@@ -1,0 +1,99 @@
+.GridBlock .BlockWrapper-inner{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.GridItem{
+  min-width: 300px;
+  width:25%;
+  flex-grow: 1;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+@media screen and (min-width:600px) {
+  .GridItem{
+    max-width: 50%;
+  }
+}
+@media screen and (min-width:900px) {
+  .GridItem{
+    max-width: 33.33%;
+  }
+}
+@media screen and (min-width:1200px) {
+  .GridItem{
+    max-width: 25%;
+  }
+}
+.GridItem::before{
+  content: "";
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 100%;
+  background-color: inherit;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.GridItem:hover::before{
+  opacity: .5;
+}
+.GridItem-inner{
+  position: absolute;
+  box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width:100%;
+  padding: 0 20px;
+  text-align: center;
+}
+.GridItem-hoverReveal{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s;
+}
+.GridItem:hover .GridItem-hoverReveal{
+  max-height: 200px;
+}
+.GridItem h1{
+  transition: color .5s;
+  margin: 0;
+  padding: 0;
+}
+.GridItem p{
+  margin: 0;
+  padding: 0;
+}
+.GridItem-whiteTitle, .GridItem:hover h1{
+  color:white !important;
+}
+.GridItem-tags>div{
+  display: inline-block;
+  border-radius: 50px;
+  border: solid 1px;
+  padding: 0 5px;
+  margin: 2px;
+  font-size: 11px;
+}
+.GridItem button{
+  background: none;
+  border: solid 1px;
+  border-radius: 5px;
+  color: inherit;
+  margin: 10px 0;
+  box-sizing: border-box;
+  padding: 7px 20px;
+  font-size: 15px;
+  transition: background-color .5s;
+  cursor: pointer;
+}
+.GridItem button:hover{
+  background: rgba(255,255,255,.5);
+}

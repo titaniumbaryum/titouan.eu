@@ -1,0 +1,19 @@
+.RowBlock .BlockWrapper-inner{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  box-sizing: border-box;
+}
+.RowBlock .Column{
+  min-width: 400px;
+  width: 50%;
+  flex-grow: 1;
+  box-sizing: border-box;
+  position: relative;
+}
+.Column-VCenter{
+  display: flex;
+  align-items: center;
+}
