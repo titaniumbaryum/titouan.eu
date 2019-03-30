@@ -8,9 +8,10 @@ import GridItem from '../Blocks/Grid/GridItem';
 //Bits
 import SubSpaceGate from '../Bits/SubSpace/SubSpaceGate';
 //Posts
-import {DarwinRocketPost,EnibCalPost,PolyVRPost,EnigmaPost} from './Projects.posts';
+import {DarwinRocketPost,ProsthesisPost,RobotPost,EnibCalPost,PolyVRPost,EnigmaPost} from './Projects.posts';
 
 //Media
+import gridProsthetics from '../assets/img/grid/prosthetics.jpg';
 import gridMiniBots from '../assets/img/grid/miniBots.jpg';
 import gridDarwinRockets from '../assets/img/grid/darwinRockets.jpg';
 import gridEnibcal from '../assets/img/grid/enibcal.jpg';
@@ -30,6 +31,9 @@ const translations=[
   ["Play",{en:"Play",fr:"Jouer"}],
   ["Visit",{en:"Visit",fr:"Visiter"}],
 
+  ["ProsthesisDesc",{
+    en:"Arm cosmetic Prosthesis that I designed and printed.",
+    fr:"Prothèse esthétique de bras que j'ai conçue et imprimmée en 3D"}],
   ["MinibotsDesc",{
     en:"Educative game to learn the bases of logic and programming by creating a node mesh.",
     fr:"Jeu éducatif pour apprendre les bases de la logique et du code via un réseau de nodes."}],
@@ -85,6 +89,16 @@ export default class Projects extends Component{
         <SubSpaceGate post={this.state.post} onClose={()=>this.setPost(null)} background={palette.dark} color={text.light}/>
         <GridBlock anchor={this.props.anchor}>
           <GridItem
+            color="rgb(255, 19, 0)"
+            background={gridProsthetics}
+            whiteTitle
+            title="Prosthesis"
+            tags={["CAD","3D printing","ongoing"]}
+            callToAction={t("LearnMore")}
+            onClick={()=>{this.setPost(<ProsthesisPost/>)}}>
+            {t("ProsthesisDesc")}
+          </GridItem>
+          <GridItem
             color="#f0932b"
             background={gridMiniBots}
             title="Minibots"
@@ -103,6 +117,16 @@ export default class Projects extends Component{
             {t("DarwinRocketsDesc")}
           </GridItem>
           <GridItem
+            color="rgb(70, 250, 70)"
+            background={gridRobot}
+            whiteTitle
+            title="EuroBots"
+            tags={["C++","nodeJS","Arduino","VHDL","robotics","Pathfinding","control loops","computer vision","retro-engineering"]}
+            callToAction={t("LearnMore")}
+            onClick={()=>{this.setPost(<RobotPost/>)}}>
+            {t("ArenibDesc")}
+          </GridItem>
+          <GridItem
             color="rgb(120, 200, 150)"
             background={gridEnibcal}
             title="EnibCal"
@@ -119,16 +143,6 @@ export default class Projects extends Component{
             callToAction={t("LearnMore")}
             onClick={()=>this.setPost(<EnigmaPost/>)}>
             {t("EnigmaDesc")}
-          </GridItem>
-          <GridItem
-            color="rgb(70, 250, 70)"
-            background={gridRobot}
-            whiteTitle
-            title="ARENIB"
-            tags={["C++","nodeJS","Arduino","VHDL","robotics","Pathfinding","control loops","computer vision","retro-engineering"]}
-            callToAction={t("Visit")}
-            onClick={()=>this.popup("http://arenib.com")}>
-            {t("ArenibDesc")}
           </GridItem>
           <GridItem
             color="rgb(200, 200, 0)"
